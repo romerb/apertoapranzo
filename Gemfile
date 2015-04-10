@@ -16,6 +16,9 @@ group :development, :test do
   gem 'spring'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'capybara', '~> 2.4'
+  gem 'poltergeist', '~> 1.6'
+  gem 'phantomjs', '~> 1.9', require: 'phantomjs/poltergeist'
 end
 
 group :test do
