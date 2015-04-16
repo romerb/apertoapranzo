@@ -10,6 +10,7 @@ App to check open restaurants open at pranzo XD
 Close to where you are or close to given address
 
 [![Codeship Status for romerb/apertoapranzo](https://www.codeship.io/projects/e4516ef0-c6be-0132-0c1d-26d28fe02b95/status?branch=master)](https://www.codeship.io/projects/74774)
+[![Code Climate](https://codeclimate.com/github/romerb/apertoapranzo/badges/gpa.svg)](https://codeclimate.com/github/romerb/apertoapranzo)
 
 ## Installation
 
