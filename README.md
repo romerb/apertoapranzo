@@ -1,5 +1,7 @@
 # Aperto a pranzo
 
+[![Join the chat at https://gitter.im/romerb/apertoapranzo](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/romerb/apertoapranzo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 :hamburger: :fries: :poultry_leg: :meat_on_bone: :spaghetti: :curry:
 :fried_shrimp: :bento: :sushi: :fish_cake: :rice_ball: :rice_cracker:
 :rice: :ramen: :stew: :oden: :dango: :egg: :bread: :doughnut: :custard:
