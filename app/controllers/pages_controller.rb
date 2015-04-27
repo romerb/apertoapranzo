@@ -3,15 +3,19 @@ class PagesController < ApplicationController
   end
 
   def search
-    render json: client.search_venues(ll: "#{params[:lat]},#{params[:lon]}")
+    response = client.search_venues(ll: "#{params[:lat]},#{params[:lon]}")
+    venues = response.venues.map do |venue|
+      venues_storage.get venue.id
+    end
+    render json: venues
   end
 
   private
   def client
-    Foursquare2::Client.new(
-      client_id: Rails.application.secrets.foursq_client_id,
-      client_secret: Rails.application.secrets.foursq_client_secret,
-      api_version: '20150427'
-    )
+    @client ||= Foursquare.new
+  end
+
+  def venues_storage
+    @venues_storage ||= VenuesStorage.new
   end
 end

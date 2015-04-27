@@ -136,6 +136,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redis (3.2.1)
     rspec-core (3.2.1)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.0)
@@ -210,6 +211,7 @@ DEPENDENCIES
   phantomjs (~> 1.9)
   poltergeist (~> 1.6)
   rails (= 4.2.1)
+  redis (~> 3.0)
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
