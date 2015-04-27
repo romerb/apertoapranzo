@@ -4,13 +4,19 @@ class VenuesStorage
   end
 
   def get(venue_id)
-    @cache.get(venue_id) || set(venue_id)
+     get!(venue_id) || set(venue_id)
   end
 
   private
+  def get!(venue_id)
+    venue = @cache.get(venue_id)
+    return JSON.parse(venue) if venue
+    false
+  end
+
   def set(venue_id)
     venue = get_venue venue_id
-    @cache.setex venue_id, 1.week.seconds, venue
+    @cache.setex venue_id, 1.week.seconds, venue.to_json
     venue
   end
 
