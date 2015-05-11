@@ -1,6 +1,6 @@
 class Foursquare
   extend Forwardable
-  def_delegators :@client, :venue, :search_venues
+  def_delegators :@client, :venue, :search_venues, :venue_hours
 
   def initialize
     @client = Foursquare2::Client.new(

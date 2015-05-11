@@ -3,28 +3,28 @@ class VenuesStorage
     @cache = Redis.new
   end
 
-  def get(venue_id)
-     get!(venue_id) || set(venue_id)
+  def get(venue)
+     get!(venue) || set(venue)
   end
 
   private
-  def get!(venue_id)
-    venue = @cache.get(venue_id)
-    return JSON.parse(venue) if venue
+  
+  def get!(venue)
+    cached_venue = @cache.get(venue.id)
+    return JSON.parse(cached_venue) if cached_venue
     false
   end
 
-  def set(venue_id)
-    venue = get_venue venue_id
-    @cache.setex venue_id, 1.week.seconds, venue.to_json
+  def set(venue)
+    venue = get_venue venue
+    @cache.setex venue.id, 1.week.seconds, venue.to_json
     venue
   end
 
-  def get_venue(venue_id)
-    foursquare.venue venue_id
+  def get_venue(venue)
+    venue.merge(foursquare.venue_hours venue.id)
   end
 
-  private
   def foursquare
     @client ||= Foursquare.new
   end
